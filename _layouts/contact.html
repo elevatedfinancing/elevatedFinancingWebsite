@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>{{ site.title }}</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+        {% include header.html purl='contactus.html' %}
+   <div class="container">
+      <div class="alert alert-danger" role="alert" id="formPageError" role="alert" style="display:none;">
+  There are errors on the page. Please find them highlighted in red on the page.
+</div>
+ <div class="alert alert-success" role="alert" id="formPageSuccess" role="alert" style="display:none;">
+  Success! Thanks for contacting Elevating Financing. You should recieve a confirmation email shortly.
+</div>
+<br>
+   <h1 class="display-6">Contact Us</h1>
+   <br>
+   <div class="row">
+    <div class="col-12 col-md-10">
+   <p class="text-center">Let’s Connect! Please fill out the info and we will be in touch shortly.</p>
+   </div>
+   </div>
+<br>
+<form class="form-horizontal" id="contact">
+  <div class="form-group">
+    <label for="inputFirstName" class="col-sm-2 control-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="firstN" placeholder="John">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputLastName" class="col-sm-2 control-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="lastN" placeholder="Doe">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputLastName" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="email" placeholder="john.doe@example.com">
+    </div>
+  </div>
+    <div class="form-group">
+    <label for="inputLastName" class="col-sm-2 control-label">Phone</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="phone" placeholder="xxx-xxx-xxxx (Optional)">
+    </div>
+  </div>
+   <div class="form-group">
+    <label for="inputLastName" class="col-sm-2 control-label">Message</label>
+    <div class="col-sm-10">
+      <textarea class="form-control" rows="3" placeholder="Input your message here..." id="message"></textarea>
+       <div class="invalid-feedback">
+        Message must be less than 500 characters. 
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button onclick="myFunction()" type="button" class="btn btn-primary" >Submit</button>
+    </div>
+  </div>
+</form>
+
+
+   </div>
+
+      <hr class="featurette-divider">
+
+    <footer class="container">
+      <p>&copy; Elevated Financing LLC 2017</p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <noscript>
+  <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ShowErrorPage.html">
+</noscript>
+    <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+
+
+
+<script>
+function isTextValid(e){return e?(console.log("It has a value!!"),!0):(console.log("It does not.."),!1)}function isEmailValid(e){if(isTextValid(e)){var t=/\S+@\S+\.\S+/;return t.test(e)}return!1}function isMessageValid(e){return console.log(e.length),isTextValid(e)&&e.length<500?!0:!1}function myFunction(){var e=document.getElementById("firstN").value,t=document.getElementById("lastN").value,o=document.getElementById("email").value,l=document.getElementById("phone").value,s=document.getElementById("message").value,n=isTextValid(e),a=isTextValid(t),m=isEmailValid(o),i=isMessageValid(s),d=isTextValid(l);if(d||(l="N/A"),n?document.getElementById("firstN").className="form-control is-valid":document.getElementById("firstN").className="form-control is-invalid",a?document.getElementById("lastN").className="form-control is-valid":document.getElementById("lastN").className="form-control is-invalid",m?document.getElementById("email").className="form-control is-valid":document.getElementById("email").className="form-control is-invalid",i?document.getElementById("message").className="form-control is-valid":document.getElementById("message").className="form-control is-invalid",n&&a&&m&&i){var c=new XMLHttpRequest;c.onreadystatechange=function(){c.readyState==XMLHttpRequest.DONE&&console.log(c.responseText)},c.open("POST","https://iguq9khjof.execute-api.us-east-1.amazonaws.com/prod/SendAutomatedEmail");var r={firstName:e,lastName:t,email:o,phoneNum:l,message:s};c.send(JSON.stringify(r)),document.getElementById("contact").reset(),document.getElementById("message").className="form-control",document.getElementById("email").className="form-control",document.getElementById("lastN").className="form-control",document.getElementById("firstN").className="form-control",$("#formPageError").hide(),$("#formPageSuccess").show(),$("html,body").scrollTop(0),console.log("Everything is good")}else $("#formPageError").show(),$("html,body").scrollTop(0),console.log("Everything is not good")}
+</script>
+
+  </body>
+</html>

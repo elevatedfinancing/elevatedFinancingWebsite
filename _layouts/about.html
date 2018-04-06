@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>{{ site.title }}</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="/assets/jumbotron.css" rel="stylesheet">
+
+    <style>
+     @media (max-width: 500px) {
+.col-1{
+display: none;
+}
+     }
+    </style>
+  </head>
+
+  <body>
+
+   {% include header.html purl='about.html' %}
+
+   <div class="container">
+      <br>
+  <h1 class="text-center">
+  <small class="text-muted">{{ page.pageHeader1 }}</small>
+</h1>
+ <hr class="featurette-divider">
+<p class="text-center lead">{{ page.pageDescription }}</p>
+
+<p class="text-center lead">
+Elevated Financing LLC offers personalized consultation and financing for:
+</p>
+
+<ul class="lead">
+
+   {% for n in site.aboutlist %}
+      <li class="lead">{{ n.itemText }}</li>
+     
+    {% endfor %}
+    </ul>
+  
+  <br>
+    <h1 class="text-center">
+  <small class="text-muted">People</small>
+ <hr class="featurette-divider">
+</h1>
+  <br>
+<div class="row">
+<div class="col-7">
+<p class="lead">Thomas Kelly is the principal member and founder of Elevated Financing LLC. Thomas founded the company in 2017 with the goal to support real estate investors make smart financing decisions. 
+<br><br>Prior to founding the company, Thomas worked as a commercial loan underwriter and later as a loan review analyst. Prior to his career in banking, Thomas served in the U.S Army as a Motor Transport Operator.
+Thomas graduated from University of Illinois at Chicago with a bachelor’s in finance.  He has underwritten and reviewed thousands mortgages for commercial properties, agricultural properties, and development properties across the Midwest and Rocky Mountain Region.
+<br><br>Thomas is a native of the Chicago area and Chicago sports fan. On his free time he enjoys playing ice hockey, snowboarding, and enjoying all that Colorado has to offer. </p>
+   </div>
+   <div class="col-1">
+    
+   </div> 
+   <div class="col-4">
+       <div class="col align-self-center">
+    <img src="/assets/headshot1.jpg" class="rounded" />
+<br>
+ <br>
+  <footer class="blockquote-footer">Thomas Kelly, <cite title="Source Title">Founder</cite>
+  </footer>
+     <div class="text-center">
+     <a href="https://www.linkedin.com/in/thomaskelly4/" target="_blank">
+  <img src="/assets/In-Black-34px-R.png">
+  </a>
+  </div>
+    </div>
+   </div>
+</div>
+
+  
+
+
+   </div>
+ {% include footer.html %}
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+
+  </body>
+</html>

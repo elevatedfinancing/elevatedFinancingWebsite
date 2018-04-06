@@ -1,0 +1,24 @@
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Elevated Financing</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+       {% for n in site.nav %}
+
+    {% if include.purl == n.permalink %}
+   <li class="nav-item active">
+
+    {% else %}
+ <li class="nav-item">
+      
+
+        {% endif %}
+    <a class="nav-link" href="{{ n.permalink }}">{{ n.page }}</a></li>
+       {% endfor %}
+        </ul>
+      </div>
+    </nav>
