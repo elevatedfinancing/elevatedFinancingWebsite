@@ -1,4 +1,4 @@
-
+---
 title: Elevated Financing
 timezone: UTC
 collections:
@@ -21,4 +21,3 @@ defaults:
   values:
     layout: page
 permalink: pretty
-
