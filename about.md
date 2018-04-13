@@ -1,6 +1,5 @@
 ---
 title: About
-layout: about
 pageHeader1: About
 pageDescription: Elevated Financing LLC is a single member independent commercial
   loan consulting firm that specializes in financing real estate acquisitions, construction,
@@ -8,6 +7,17 @@ pageDescription: Elevated Financing LLC is a single member independent commercia
   and Rocky Mountain region.
 pageSubDescription: 'Elevated Financing LLC offers personalized consultation and financing
   for:'
+OfferList:
+- Office properties
+- Retail properties
+- Industrial properties
+- Agricultural properties
+- Multifamily properties
+- Land development projects
+- Non-owner occupied residential investment properties
+- Fix and flip projects
+- In addition consultation and arrangement for business purpose loans is also offered
+layout: about
 ---
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
