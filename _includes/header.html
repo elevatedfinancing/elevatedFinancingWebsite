@@ -7,9 +7,9 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-       {% for n in site.nav %}
+       {% for page in site.pages %}
 
-    {% if include.purl == n.permalink %}
+    {% if include.purl == page.url %}
    <li class="nav-item active">
 
     {% else %}
@@ -17,7 +17,7 @@
       
 
         {% endif %}
-    <a class="nav-link" href="{{ n.permalink }}">{{ n.page }}</a></li>
+    <a class="nav-link" href="{{ page.url }}">{{ page.title }}</a></li>
        {% endfor %}
         </ul>
       </div>
